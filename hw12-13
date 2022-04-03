@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include
 unsigned char CheckBit(unsigned int uValue)
 {
     unsigned char ucResult = 0;
@@ -63,7 +62,6 @@ void Conv(int sValue, char *pBuffer)
         sprintf(pBuffer, " %d", sValue);
     }
 }
-//function to create arraym from ints, use push and pop functions
 void push(int *arr, int val)
 {
     int i;
@@ -147,7 +145,6 @@ int isInArray(int *arr, int val)
     }
     return 0;
 }
-//function to perform bubble sort on array, prototype is void bubbleSort(int* pArray,unsigned int uLen) where pArray is a pointer to an unsorted array and uLen is its size
 void bubbleSort(int *pArray, unsigned int uLen)
 {
     int i = 0;
@@ -166,7 +163,6 @@ void bubbleSort(int *pArray, unsigned int uLen)
         }
     }
 }
-//function to perform binary search, prototype is unsigned int binarySearch(int* pArray, unsigned int uArraySize,unsigned int uValue) where pArray is a pointer to a sorted array with ascending order of elements, uArraySize is number of elements in the array and uValue is the searched value. if uValue is found, function should return it index,otherwise 0xFFFF
 unsigned int binarySearch(int *pArray, unsigned int uArraySize, unsigned int uValue)
 {
     unsigned int uLow = 0;
@@ -190,7 +186,6 @@ unsigned int binarySearch(int *pArray, unsigned int uArraySize, unsigned int uVa
     }
     return 0xFFFF;
 }
-//function to perform addition of positive numbers represented as strings, result is stored into a buffer, passed as parameter to the function, assume that the result buffer is always big enough, prototype function is void Add(const char* p1,const char* p2,char* result)
 void Add(const char *p1, const char *p2, char *result)
 {
     int i = 0;
@@ -243,7 +238,6 @@ void Add(const char *p1, const char *p2, char *result)
         result[i] = arr_result[len_result - i - 1] + '0';
     }
 }
-//sprintf function, prototype is void sprintf(char* szBuffer,char* szPattern,char** args) the szBuffer resulting string, szPattern is the format control, if nad only if "%s" appears in the format string szPattern it is replaced with the corresponding next argument from the "args"
 void SPRINTF(char* szBuffer, char* szPattern, char** args) {
     int i = 0;
     int j = 0;
@@ -256,7 +250,6 @@ void SPRINTF(char* szBuffer, char* szPattern, char** args) {
     int len_arg_pattern = 0;
     int len_arg_pattern_buffer = 0;
 }
-//function cWindow with int member variables (properties): Left,Right,Top,Bottom, which are initialized by the default constructor, the class should have a copy constructor, declaration of derived class cHint with additional member variable sCaption of type tString, declaration of another derived class cBitButton with additional member variable aBitmap of type tBitmap, both derived classes should have a default constructor which initializes all member variables
 class cWindow{
 public:
     int Left;
