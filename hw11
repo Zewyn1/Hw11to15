@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+//create macro max for ints x,y,z which returns the biggest of the three
+#define max(x,y,z) ((x)>(y)?((x)>(z)?(x):(z)):((y)>(z)?(y):(z)))
+//create macro min for ints x,y,z which returns the smallest of the three
+#define min(x,y,z) ((x)<(y)?((x)<(z)?(x):(z)):((y)<(z)?(y):(z)))
+//create macro setbit for ints mask,bit which sets the bit in the mask
+#define setbit(mask,bit) (mask|=(1<<bit))
+//create macro clearbit for ints mask,bit which clears the bit in the mask
+#define clearbit(mask,bit) (mask&=~(1<<bit))
+//create macro checkbit for ints mask,bit which checks if the bit is set in the mask
+#define checkbit(mask,bit) (mask&(1<<bit))
+//create macro inversebit for ints mask,bit which inverts the bit in the mask
+#define inversebit(mask,bit) (mask^=(1<<bit))
+//create macro swap for ints a,b which swaps the values of a and b
+#define swap(a,b) {int tmp=a;a=b;b=tmp;}
+int main(){
+    //declare variables
+    int x,y,z;
+    //prompt user for input
+    printf("Enter three integers: ");
+    scanf("%d %d %d",&x,&y,&z);
+    //print the biggest of the three
+    printf("The biggest of the three is %d\n",max(x,y,z));
+    //print the smallest of the three
+    printf("The smallest of the three is %d\n",min(x,y,z));
+    //setbit macro
+    int mask=0;
+    setbit(mask,0);
+    //clearbit
+    clearbit(mask,0);
+    //checkbit
+    checkbit(mask,0);
+    //inversebit
+    inversebit(mask,0);
+    //swap
+    swap(x,y);
+    //print the swapped values
+    printf("The swapped values are %d and %d\n",x,y);
+    return 0;
+}
